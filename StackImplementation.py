@@ -1,6 +1,6 @@
-max_size=5
+max_size=5 #You can edit this max size, this corresponds to arr[max_size] in c++
 stack=[]
-stackIndexNoter=-1
+stackIndexNoter=-1  # Our initial index count is -1 thus when we insert a first value, its index becomes 0
 
 
 
@@ -18,10 +18,11 @@ def main():
     
 
 def push(value):
-    global stackIndexNoter
+    global stackIndexNoter  # We are saying that we use the stackIndexNoter we defined previously
     global stack
     global max_size
-    if  stackIndexNoter!= (max_size-1):
+    
+    if  stackIndexNoter < (max_size-1):  # if stackIndexNoter becomes (max_size -1) then it is full 
          stack.append(value)
          stackIndexNoter += 1
     else:
@@ -33,12 +34,12 @@ def pop():
     if stackIndexNoter == -1:
         print("this stack is already empty!")
     else:
-        del stack[-1]
+        del stack[-1]  
         stackIndexNoter -=1
         
 def peek():
     global stack
-    print(stack[-1])
+    print(stack[-1]) #Print the last value of this stack
 
 
 def isFull():
